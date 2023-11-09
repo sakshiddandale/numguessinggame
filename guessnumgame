@@ -1,0 +1,104 @@
+CODE!!!
+
+// Java program for the above approach
+import java.util.Scanner;
+
+class Main {
+
+    // Function that implements the
+    // number guessing game
+    public static void
+    guessingNumberGame()
+    {
+        // Scanner Class
+        Scanner sc = new Scanner(System.in);
+
+        // Generate the numbers
+        int number = 1 + (int)(100
+                * Math.random());
+
+        // Given K trials
+        int K = 5;
+
+        int i, guess;
+
+        System.out.println(
+                "A number is chosen"
+                        + " between 1 to 100."
+                        + "Guess the number"
+                        + " within 5 trials.");
+
+        // Iterate over K Trials
+        for (i = 0; i < K; i++) {
+
+            System.out.println(
+                    "Guess the number:");
+
+            // Take input for guessing
+            guess = sc.nextInt();
+
+            // If the number is guessed
+            if (number == guess) {
+                System.out.println(
+                        "Congratulations!"
+                                + " You guessed the number.");
+                break;
+            }
+            else if (number > guess
+                    && i != K - 1) {
+                System.out.println(
+                        "The number is "
+                                + "greater than " + guess);
+            }
+            else if (number < guess
+                    && i != K - 1) {
+                System.out.println(
+                        "The number is"
+                                + " less than " + guess);
+            }
+        }
+
+        if (i == K) {
+            System.out.println(
+                    "You have exhausted"
+                            + " K trials.");
+
+            System.out.println(
+                    "The number was " + number);
+        }
+    }
+
+    // Driver Code
+    public static void
+    main(String arg[])
+    {
+
+        // Function Call
+        guessingNumberGame();
+    }
+}
+
+
+
+OUPUT!!!
+
+"C:\Program Files\Java\jdk-21\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.4\lib\idea_rt.jar=61300:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.4\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\saksh\IdeaProjects\numberguessinggame.java\out\production\numberguessinggame.java Main
+A number is chosen between 1 to 100.Guess the number within 5 trials.
+Guess the number:
+50
+The number is greater than 50
+Guess the number:
+70
+The number is less than 70
+Guess the number:
+65
+The number is less than 65
+Guess the number:
+60
+The number is less than 60
+Guess the number:
+55
+You have exhausted K trials.
+The number was 54
+
+Process finished with exit code 0
